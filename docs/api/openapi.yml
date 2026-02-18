@@ -3538,7 +3538,7 @@ paths:
               schema:
                 properties:
                   data:
-                    $ref: '#/components/schemas/ZeustypesGettableDeployment'
+                    $ref: '#/components/schemas/ZeustypesGettableZeusHost'
                   status:
                     type: string
                 type: object
@@ -4857,93 +4857,25 @@ components:
           format: date-time
           type: string
       type: object
-    ZeustypesClusterResponseModel:
+    ZeustypesGettableZeusHost:
       properties:
-        address:
-          type: string
-        buffer:
-          format: int64
-          type: integer
-        ca:
-          type: string
-        cloud_account_id:
-          type: string
-        cloud_provider:
-          type: string
-        cloud_region:
-          type: string
-        created_at:
-          format: date-time
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        region:
-          $ref: '#/components/schemas/ZeustypesRegionModel'
-        region_id:
-          type: string
-        updated_at:
-          format: date-time
-          type: string
-      type: object
-    ZeustypesDeploymentHistoryModel:
-      properties:
-        created_at:
-          format: date-time
-          type: string
-        deployment_id:
-          type: string
-        event:
-          type: string
-        id:
-          type: string
-        state_after:
-          type: string
-        state_before:
-          type: string
-      type: object
-    ZeustypesGettableDeployment:
-      properties:
-        cluster:
-          $ref: '#/components/schemas/ZeustypesClusterResponseModel'
-        cluster_id:
-          type: string
-        created_at:
-          format: date-time
-          type: string
-        histories:
-          items:
-            $ref: '#/components/schemas/ZeustypesDeploymentHistoryModel'
-          nullable: true
-          type: array
         hosts:
           items:
-            $ref: '#/components/schemas/ZeustypesHostModel'
+            properties:
+              is_default:
+                type: boolean
+              name:
+                type: string
+              url:
+                type: string
+            type: object
+          nullable: true
           type: array
-        id:
-          type: string
-        license_id:
-          type: string
         name:
-          type: string
-        password:
           type: string
         state:
           type: string
         tier:
-          type: string
-        updated_at:
-          format: date-time
-          type: string
-        user:
-          type: string
-      type: object
-    ZeustypesHostModel:
-      properties:
-        is_default:
-          type: boolean
-        name:
           type: string
       type: object
     ZeustypesPostableHost:
@@ -4978,23 +4910,6 @@ components:
         uses_otel:
           type: boolean
         where_did_you_discover_signoz:
-          type: string
-      type: object
-    ZeustypesRegionModel:
-      properties:
-        category:
-          type: string
-        created_at:
-          format: date-time
-          type: string
-        dns:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        updated_at:
-          format: date-time
           type: string
       type: object
   securitySchemes:
