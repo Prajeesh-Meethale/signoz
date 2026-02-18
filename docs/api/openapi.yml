@@ -3526,7 +3526,7 @@ paths:
       summary: Rotate session
       tags:
       - sessions
-  /api/v2/zeus/deployments/host:
+  /api/v2/zeus/hosts:
     put:
       deprecated: false
       description: This endpoint saves the host of a deployment to zeus.
@@ -3583,7 +3583,7 @@ paths:
       summary: Put host in Zeus for a deployment.
       tags:
       - zeus
-  /api/v2/zeus/deployments/profile:
+  /api/v2/zeus/profiles:
     put:
       deprecated: false
       description: This endpoint saves the profile of a deployment to zeus.
