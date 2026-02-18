@@ -1561,27 +1561,12 @@ export interface TypesUserDTO {
 	updatedAt?: Date;
 }
 
-export type ZeustypesGettableZeusHostDTOHostsItem = {
-	/**
-	 * @type boolean
-	 */
-	is_default?: boolean;
-	/**
-	 * @type string
-	 */
-	name?: string;
-	/**
-	 * @type string
-	 */
-	url?: string;
-};
-
 export interface ZeustypesGettableZeusHostDTO {
 	/**
 	 * @type array
 	 * @nullable true
 	 */
-	hosts?: ZeustypesGettableZeusHostDTOHostsItem[] | null;
+	hosts?: ZeustypesHostDTO[] | null;
 	/**
 	 * @type string
 	 */
@@ -1594,6 +1579,21 @@ export interface ZeustypesGettableZeusHostDTO {
 	 * @type string
 	 */
 	tier?: string;
+}
+
+export interface ZeustypesHostDTO {
+	/**
+	 * @type boolean
+	 */
+	is_default?: boolean;
+	/**
+	 * @type string
+	 */
+	name?: string;
+	/**
+	 * @type string
+	 */
+	url?: string;
 }
 
 export interface ZeustypesPostableHostDTO {

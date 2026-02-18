@@ -4861,14 +4861,7 @@ components:
       properties:
         hosts:
           items:
-            properties:
-              is_default:
-                type: boolean
-              name:
-                type: string
-              url:
-                type: string
-            type: object
+            $ref: '#/components/schemas/ZeustypesHost'
           nullable: true
           type: array
         name:
@@ -4876,6 +4869,15 @@ components:
         state:
           type: string
         tier:
+          type: string
+      type: object
+    ZeustypesHost:
+      properties:
+        is_default:
+          type: boolean
+        name:
+          type: string
+        url:
           type: string
       type: object
     ZeustypesPostableHost:
